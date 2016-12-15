@@ -6,13 +6,9 @@ var newElem = function(e) {
 
 b.addEventListener( 'click', newElem);
 
-var changeHead = function(e) {
-    var head = document.getElementById("h");
-    head.innerHTML = 
-}
-
-var lists = document.getElementsByTagName("li");
-var i=0;
-for (i=0; i<lists.length; i++) {
-    lists[i].addEventListener('hover', changeHead);
+var lists = document.getElementsByTagName("hover");
+for (var i=0; i<lists.length; i++) {
+    lists[i].addEventListener('click',function(e){
+	console.log(this);
+    });
 }
