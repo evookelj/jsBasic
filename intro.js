@@ -6,9 +6,10 @@ var newElem = function(e) {
 
 b.addEventListener( 'click', newElem);
 
-var lists = document.getElementsByTagName("hover");
+var lists = document.getElementsByTagName("li");
 for (var i=0; i<lists.length; i++) {
-    lists[i].addEventListener('click',function(e){
+    //doesn't yet work b/c 'hover' isnt an event
+    lists[i].addEventListener('hover',function(e){
 	console.log(this);
     });
 }
