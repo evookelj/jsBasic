@@ -9,20 +9,21 @@ b.addEventListener( 'click', newElem);
 
 //========================Point 2
 var lists = document.getElementsByTagName("li");
+var list = document.getElementById("thelist");
+var head = document.getElementById("h");
+var origHead = head.innerHTML;
 for (var i=0; i<lists.length; i++) {
     //doesn't yet work b/c 'hover' isnt an eventg
-    lists[i].addEventListener('hover',function(e){
-	console.log(this);
-    });
-}
-
-//========================Point 3
-
-//========================Point 4
-var lists = document.getElementsByTagName("li");
-var list = document.getElementById("thelist");
-for (var i=0; i<lists.length; i++) {
-    lists[i].addEventListener('click',function(e){
-	this.remove()
-    });
+    lists[i].addEventListener('mouseover',
+			      function(e){
+				  head.innerHTML = this.innerHTML
+			      });
+    lists[i].addEventListener('click',
+			      function(e){
+				  this.remove()
+			      });
+    lists[i].addEventListener('mouseout',
+			      function(e){
+				  head.innerHTML = origHead
+			      });
 }
