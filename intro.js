@@ -1,4 +1,4 @@
-//========================Point 1
+//========================Part 1
 var newElem = function(e) {
     var l = document.getElementById("thelist");
     var c = l.appendChild(document.createElement("li"));
@@ -7,7 +7,6 @@ var newElem = function(e) {
 
 b.addEventListener( 'click', newElem);
 
-//========================Point 2
 var lists = document.getElementsByTagName("li");
 var list = document.getElementById("thelist");
 var head = document.getElementById("h");
@@ -27,3 +26,18 @@ for (var i=0; i<lists.length; i++) {
 				  head.innerHTML = origHead
 			      });
 }
+
+//=======================Part 2
+var fibN = function(n) {
+    if (n<2) { return 1; }
+    return fibN(n-1) + fibN(n-2);
+};
+
+var ctr = 0;
+var fiblist = document.getElementById("fiblist");
+var fb = document.getElementById("fb");
+fb.addEventListener('click',
+		    function(e){
+			var newfib = fiblist.appendChild(document.createElement("li"));
+			newfib.innerHTML = fibN(ctr++);
+		    });
